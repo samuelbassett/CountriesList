@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CountriesList</string>
+    <string name="title_countries">Countries</string>
+    <string name="capital_test">Capital</string>
+    <string name="code_test">Code</string>
+    <string name="region_test">Region</string>
+    <string name="country_test">Country, EX</string>
+</resources>

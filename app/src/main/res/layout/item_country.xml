@@ -44,7 +44,6 @@
                 android:ellipsize="end"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textColor="#55000000"
                 android:maxLines="3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

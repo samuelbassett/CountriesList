@@ -3,15 +3,10 @@ package com.tc.countrieslist.ui.countries
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
 import com.tc.countrieslist.data.model.countries.CountriesItemModel
 import com.tc.countrieslist.data.remote.ApiDetails
 import com.tc.countrieslist.utils.NetworkUtils
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class CountriesViewModel(application: Application) : AndroidViewModel(application) {
 

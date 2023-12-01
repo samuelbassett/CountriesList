@@ -22,7 +22,7 @@ class CountriesViewModel : ViewModel() {
         viewModelScope.launch {
             val result = ApiDetails.service.getCountries()
             _countryData.postValue(UIState.Loading)
-            delay(500)
+            delay(600)
             if (result.isSuccessful) {
                 _countryData.postValue(UIState.Success(result.body()!!))
             } else {

@@ -34,7 +34,8 @@ class CountriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val countriesViewModel = ViewModelProvider(this).get(CountriesViewModel::class.java)
+        val countriesViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.
+        getInstance(requireActivity().application)).get(CountriesViewModel::class.java)
         countriesViewModel.countryData.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is UIState.Loading -> {
@@ -54,7 +55,7 @@ class CountriesFragment : Fragment() {
                 is UIState.Error -> {
                     binding.progressBar.visibility = View.INVISIBLE
                     val errorMessage = state.message
-                    Toast.makeText(requireContext(), "Error: $errorMessage", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), "Error: $errorMessage", Toast.LENGTH_LONG)
                         .show()
                 }
             }

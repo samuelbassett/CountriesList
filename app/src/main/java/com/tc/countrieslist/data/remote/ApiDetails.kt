@@ -17,5 +17,6 @@ object ApiDetails {
                     HttpLoggingInterceptor.Level.BODY)).build())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
     val service: CountriesService = retrofit.create(CountriesService::class.java)
 }

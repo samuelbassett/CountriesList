@@ -59,7 +59,6 @@ class CountriesFragment : Fragment() {
                 }
             }
         }
-
         countryAdapter = CountryAdapter(arrayListOf())
 
 

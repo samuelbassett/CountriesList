@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tc.countrieslist.data.model.countries.CountriesItemModel
 import com.tc.countrieslist.data.remote.ApiDetails
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CountriesViewModel : ViewModel() {
@@ -21,12 +22,11 @@ class CountriesViewModel : ViewModel() {
         viewModelScope.launch {
             val result = ApiDetails.service.getCountries()
             _countryData.postValue(UIState.Loading)
-            if (_countryData.value !is UIState.Success) {
-                if (result.isSuccessful) {
-                    _countryData.postValue(UIState.Success(result.body()!!))
-                } else {
-                    _countryData.postValue(UIState.Error(result.message()))
-                }
+            delay(500)
+            if (result.isSuccessful) {
+                _countryData.postValue(UIState.Success(result.body()!!))
+            } else {
+                _countryData.postValue(UIState.Error(result.message()))
             }
         }
     }
